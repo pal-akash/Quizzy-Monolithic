@@ -24,6 +24,10 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
+    @GetMapping("id/{id}")
+    public Question getQuestionById(@PathVariable Integer id){
+        return questionService.getQuestionById(id);
+    }
 
 
 }

@@ -21,4 +21,7 @@ public class QuestionService {
         return questionDao.findByCategory(category);
     }
 
+    public Question getQuestionById(Integer id) {
+        return questionDao.findById(id).get();
+    }
 }
