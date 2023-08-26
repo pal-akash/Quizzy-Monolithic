@@ -1,4 +1,4 @@
-package com.akash.quizzy;
+package com.akash.quizzy.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

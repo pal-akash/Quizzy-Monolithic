@@ -1,6 +1,6 @@
 package com.akash.quizzy.service;
 
-import com.akash.quizzy.Question;
+import com.akash.quizzy.model.Question;
 import com.akash.quizzy.dao.QuestionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
