@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionService {
@@ -29,8 +30,18 @@ public class QuestionService {
         questionDao.save(question);
         return "Success";
     }
+
     public String deleteQuestionById(Long id) {
         questionDao.deleteById(id);
+        return "Success";
+    }
+
+    public String updateQuestion(Question question) {
+        Optional<Question> foundQuestionOptional = questionDao.findById(question.getId());
+        if(foundQuestionOptional.isEmpty()){
+            return "No such question available!";
+        }
+        questionDao.save(question);
         return "Success";
     }
 }

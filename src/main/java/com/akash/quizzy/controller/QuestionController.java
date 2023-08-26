@@ -38,4 +38,10 @@ public class QuestionController {
     public String deleteQuestionById(@PathVariable Long id){
         return questionService.deleteQuestionById(id);
     }
+
+    @PutMapping("update")
+    public String updateQuestion(@RequestBody Question question){
+        return questionService.updateQuestion(question);
+    }
+
 }
