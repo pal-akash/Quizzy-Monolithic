@@ -2,6 +2,7 @@ package com.akash.quizzy.controller;
 
 import com.akash.quizzy.model.Question;
 import com.akash.quizzy.model.QuestionWrapper;
+import com.akash.quizzy.model.UserResponse;
 import com.akash.quizzy.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,5 +25,10 @@ public class QuizController {
     @GetMapping("get/{id}")
     public ResponseEntity<List<QuestionWrapper>> getQuiz(@PathVariable Long id){
         return quizService.getQuiz(id);
+    }
+
+    @PostMapping("submit/{id}")
+    public ResponseEntity<Integer> submitQuiz(@PathVariable Long id, @RequestBody List<UserResponse> userResponses){
+        return quizService.calculateResult(id, userResponses);
     }
 }
